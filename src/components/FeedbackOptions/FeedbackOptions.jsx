@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const StatisticsBtns = ({ good, neutral, bad }) => {
+const FeedbackOptions = ({ good, neutral, bad }) => {
     return (
     <section>
         <h1>Please leave your feedback</h1>
@@ -20,10 +20,10 @@ const StatisticsBtns = ({ good, neutral, bad }) => {
     )
 };
 
-StatisticsBtns.propTypes = {
+FeedbackOptions.propTypes = {
     good: PropTypes.func.isRequired,
     neutral: PropTypes.func.isRequired,
     bad: PropTypes.func.isRequired,
 }
 
-export default StatisticsBtns;
+export default FeedbackOptions;
