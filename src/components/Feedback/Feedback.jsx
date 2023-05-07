@@ -55,7 +55,7 @@ class Feedback extends React.Component {
     const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
+      <StyledWrapper>
         <Section
           title="Please leave your feedback"
           children={
@@ -81,7 +81,7 @@ class Feedback extends React.Component {
             }
           />
         )}
-      </div>
+      </StyledWrapper>
     );
   }
 }
