@@ -1,6 +1,9 @@
 import React from 'react';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
+import Section from 'components/Section/Section';
+import Notification from 'components/Notification/Notification';
+import { StyledWrapper } from './Feedback.styled';
 
 class Feedback extends React.Component {
   state = {
@@ -53,18 +56,31 @@ class Feedback extends React.Component {
 
     return (
       <div>
-        <FeedbackOptions
-          good={this.handleBtnClick}
-          neutral={this.handleBtnClick}
-          bad={this.handleBtnClick}
+        <Section
+          title="Please leave your feedback"
+          children={
+            <FeedbackOptions
+              options={Object.keys(this.state)}
+              onLeaveFeedback={this.handleBtnClick}
+            />
+          }
         />
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={totalFeedback}
-          positiveFeedback={positiveFeedbackPercentage}
-        />
+        {totalFeedback <= 0 ? (
+          <Notification message="There is no feedback" />
+        ) : (
+          <Section
+            title="Statistics"
+            children={
+              <Statistics
+                good={this.state.good}
+                neutral={this.state.neutral}
+                bad={this.state.bad}
+                total={totalFeedback}
+                positiveFeedback={positiveFeedbackPercentage}
+              />
+            }
+          />
+        )}
       </div>
     );
   }
