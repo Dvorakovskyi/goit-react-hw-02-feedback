@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyledMessage } from './Notification.styled';
 
 const Notification = ({message}) => {
   return (
     <section>
-      <p>{message}</p>
+      <StyledMessage>{message}</StyledMessage>
     </section>
   );
 };

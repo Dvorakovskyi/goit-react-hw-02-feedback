@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyledBtnList, StyledBtn } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <ul>
+    <StyledBtnList>
       {options.map(option => {
         return (
           <li option={option} key={option}>
-            <button type="button" onClick={onLeaveFeedback}>
+            <StyledBtn type="StyledBtn" onClick={onLeaveFeedback}>
               {toUpperCase(option)}
-            </button>
+            </StyledBtn>
           </li>
         );
       })}
-    </ul>
+    </StyledBtnList>
   );
 };
 
