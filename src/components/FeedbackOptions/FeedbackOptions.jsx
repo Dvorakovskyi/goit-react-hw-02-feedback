@@ -8,7 +8,12 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       {options.map(option => {
         return (
           <li option={option} key={option}>
-            <StyledBtn type="StyledBtn" onClick={onLeaveFeedback}>
+            <StyledBtn
+              type="button"
+              onClick={() => {
+                onLeaveFeedback(option);
+              }}
+            >
               {toUpperCase(option)}
             </StyledBtn>
           </li>
